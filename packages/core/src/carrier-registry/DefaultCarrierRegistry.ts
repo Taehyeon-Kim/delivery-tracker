@@ -37,6 +37,7 @@ import { CainiaoGlobal } from "../carriers/cn.cainiao.global";
 import { Pantos } from "../carriers/kr.epantos";
 import { LotteGlobal } from "../carriers/kr.lotte.global";
 import { Homepick } from "../carriers/kr.homepick";
+import { CUpost } from "../carriers/kr.cupost";
 
 interface DefaultCarrierRegistryConfig {
   carriers: Record<
@@ -61,7 +62,7 @@ class DefaultCarrierRegistry implements CarrierRegistry {
     await this.register(new ActcoreOceanInbound());
     await this.register(new CJLogistics());
     await this.register(new CoupangLogisticsServices());
-    await this.register(new CarrierAlias("kr.cupost", new CJLogistics()));
+    await this.register(new CUpost());
     await this.register(new Chunilps());
     await this.register(new CVSnet());
     await this.register(new Cway());
